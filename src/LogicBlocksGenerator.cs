@@ -37,7 +37,7 @@ public sealed class LogicBlocksGenerator
 
         Directory.CreateDirectory(outputDir);
 
-        _logger.Info($"Bootstrapping LogicBlocks '{name}'");
+        _logger.Info($"Generating LogicBlocks '{name}'");
         _logger.Info($"Template Dir: {templateDir}");
         _logger.Info($"Output Dir: {outputDir}");
 
@@ -48,7 +48,7 @@ public sealed class LogicBlocksGenerator
             ProcessTemplateFile(templateFile, templateDir, outputDir, @namespace, name);
         }
 
-        _logger.Info("Bootstrapping complete.");
+        _logger.Info("Generation complete.");
     }
 
     private void ProcessTemplateFile(string templateFile, string templateRoot, string outputRoot, string @namespace, string name)
