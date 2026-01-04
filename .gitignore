@@ -1,5 +1,5 @@
 bin/
 obj/
 
-tests/bin/
-tests/obj/
+LogicBlocksGenerator.Tests/bin/
+LogicBlocksGenerator.Tests/obj/

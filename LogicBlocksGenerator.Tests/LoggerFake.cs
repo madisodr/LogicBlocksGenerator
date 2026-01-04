@@ -1,8 +1,8 @@
-namespace tests;
+namespace LogicBlocksGenerator.Tests;
 
 using System.Collections.Generic;
 
-public sealed class LoggerFake : LogicBlocksGenerator.ILogger
+public sealed class LoggerFake : ILogger
 {
     public readonly List<string> Infos = new();
     public readonly List<string> Warnings = new();

@@ -1,7 +1,8 @@
-namespace tests;
+namespace LogicBlocksGenerator.Tests;
 
 using System;
 using System.IO;
+
 using Xunit;
 
 public sealed class OverwriteBehaviorTests : IDisposable
@@ -38,7 +39,7 @@ public sealed class OverwriteBehaviorTests : IDisposable
         File.WriteAllText(outputFile, "ORIGINAL");
 
         var logger = new LoggerFake();
-        var generator = new LogicBlocksGenerator.LogicBlocksGenerator(
+        var generator = new LogicBlocksGenerator(
           allowOverwrite: false,
           logger: logger
         );
@@ -79,7 +80,7 @@ public sealed class OverwriteBehaviorTests : IDisposable
         File.WriteAllText(outputFile, "ORIGINAL");
 
         var logger = new LoggerFake();
-        var generator = new LogicBlocksGenerator.LogicBlocksGenerator(allowOverwrite: true, logger: logger);
+        var generator = new LogicBlocksGenerator(allowOverwrite: true, logger: logger);
 
         // Act
         generator.Execute(

@@ -17,7 +17,7 @@ dotnet build
 Example, if you have a project namespace of "MyGame" and a folder "Application" which you want to generate a LogicBlock for, the following command will output the necessary files to ./MyGame/Application/State/*
 
 ```bash
-dotnet run -- \
+dotnet run --  \
   --namespace MyGame.Application \
   --name Application \
   --template ./templates \
@@ -27,5 +27,5 @@ dotnet run -- \
 
 ## run tests
 ```bash
-dotnet test tests/
+dotnet test LogicBlocksGenerator.Tests/
 ```

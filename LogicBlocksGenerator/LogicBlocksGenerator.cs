@@ -65,7 +65,10 @@ public sealed class LogicBlocksGenerator
         // Prefix name to filename
         var prefixedFileName = $"{name}{fileName}";
 
-        var outputRelativePath = string.IsNullOrEmpty(directory) ? prefixedFileName : Path.Combine(directory, prefixedFileName);
+        var outputRelativePath = string.IsNullOrEmpty(directory)
+                                ? prefixedFileName
+                                : Path.Combine(directory, prefixedFileName);
+
         var outputFilePath = Path.Combine(outputRoot, outputRelativePath);
 
         if (File.Exists(outputFilePath) && !_allowOverwrite)
