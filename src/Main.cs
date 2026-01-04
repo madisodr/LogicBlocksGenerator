@@ -127,22 +127,22 @@ public static class Program
     private static void PrintUsage()
     {
         Console.WriteLine("""
-Usage:
-  ChickenSoftLogicBlocksBootStrapper \
-    --namespace <namespace> \
-    --name <Name> \
-    --template <templateDir> \
-    --output <outputDir> \
-    [--overwrite]
+        Usage:
+        dotnet run -- \
+            --namespace <namespace> \
+            --name <Name> \
+            --template <templateDir> \
+            --output <outputDir> \
+            [--overwrite]
 
-Options:
-  --namespace   Target C# namespace to inject
-  --name        Root name used for template substitution
-  --template    Directory containing *.cs.tpl templates
-  --output      Output directory for generated files
-  --overwrite   Allow overwriting existing files
-  --help, -h    Show this help
-""");
+        Options:
+        --namespace   Target C# namespace to inject
+        --name        Root name used for template substitution
+        --template    Directory containing *.cs.tpl templates
+        --output      Output directory for generated files
+        --overwrite   Allow overwriting existing files
+        --help, -h    Show this help
+        """);
     }
 
     private sealed class Options
