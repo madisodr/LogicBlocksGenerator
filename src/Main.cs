@@ -12,12 +12,12 @@ public static class Program
 
             var logger = new ConsoleLogger();
 
-            var bootstrapper = new LogicBlocksGenerator(
+            var generator = new LogicBlocksGenerator(
               allowOverwrite: options.AllowOverwrite,
               logger: logger
             );
 
-            bootstrapper.Execute(
+            generator.Execute(
               options.Namespace,
               options.Name,
               options.TemplateDir,
