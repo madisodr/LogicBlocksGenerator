@@ -22,7 +22,7 @@ dotnet run -- \
   --name Application \
   --template ./templates \
   --output ./MyGame/Application/ \
-  --overwrite`
+  --overwrite
 ```
 
 ## run tests
