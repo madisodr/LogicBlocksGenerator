@@ -10,7 +10,7 @@ public partial class ${NAME}Logic
     public partial record State
     {
         [Meta, Id("${NAME_LOWER}_logic_state_default")]
-        public abstract partial record Default : State,
+        public partial record Default : State,
         IGet<Input.Default>
         {
             public Default()
