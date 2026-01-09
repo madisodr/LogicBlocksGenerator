@@ -11,10 +11,10 @@ public sealed class LogicBlocksGenerator
 
     private const string TemplateFileExtension = ".tpl";
 
-    public LogicBlocksGenerator(bool allowOverwrite = false, ILogger? logger = null)
+    public LogicBlocksGenerator(ILogger logger, bool allowOverwrite = false)
     {
         _allowOverwrite = allowOverwrite;
-        _logger = logger ?? new ConsoleLogger();
+        _logger = logger;
     }
 
     public void Execute(string @namespace, string name, string templateDir, string outputDir)

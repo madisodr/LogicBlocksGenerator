@@ -2,8 +2,18 @@ namespace LogicBlocksGenerator.Tests;
 
 using System.Collections.Generic;
 
+using CliFx.Infrastructure;
+
 public sealed class LoggerFake : ILogger
 {
+
+    private readonly IConsole _console;
+
+    public LoggerFake(IConsole console)
+    {
+        _console = console;
+    }
+
     public readonly List<string> Infos = new();
     public readonly List<string> Warnings = new();
     public readonly List<string> Errors = new();

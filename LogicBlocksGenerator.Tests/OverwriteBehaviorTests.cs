@@ -2,7 +2,7 @@ namespace LogicBlocksGenerator.Tests;
 
 using System;
 using System.IO;
-
+using CliFx.Infrastructure;
 using Xunit;
 
 public sealed class OverwriteBehaviorTests : IDisposable
@@ -22,6 +22,7 @@ public sealed class OverwriteBehaviorTests : IDisposable
     [Fact]
     public void Execute_DoesNotOverwriteExistingFiles_ByDefault()
     {
+        using var console = new FakeConsole();
         // Arrange
         var statesDir = Path.Combine(_templateDir, "states");
         Directory.CreateDirectory(statesDir);
@@ -38,11 +39,8 @@ public sealed class OverwriteBehaviorTests : IDisposable
         var outputFile = Path.Combine(outputStatesDir, "PlayerLogic.cs");
         File.WriteAllText(outputFile, "ORIGINAL");
 
-        var logger = new LoggerFake();
-        var generator = new LogicBlocksGenerator(
-          allowOverwrite: false,
-          logger: logger
-        );
+        var logger = new LoggerFake(console);
+        var generator = new LogicBlocksGenerator(logger, allowOverwrite: false);
 
         // Act
         generator.Execute(
@@ -63,6 +61,7 @@ public sealed class OverwriteBehaviorTests : IDisposable
     [Fact]
     public void Execute_OverwritesExistingFiles_WhenOverwriteIsEnabled()
     {
+        using var console = new FakeConsole();
         // Arrange
         var statesDir = Path.Combine(_templateDir, "states");
         Directory.CreateDirectory(statesDir);
@@ -79,8 +78,8 @@ public sealed class OverwriteBehaviorTests : IDisposable
         var outputFile = Path.Combine(outputStatesDir, "PlayerLogic.cs");
         File.WriteAllText(outputFile, "ORIGINAL");
 
-        var logger = new LoggerFake();
-        var generator = new LogicBlocksGenerator(allowOverwrite: true, logger: logger);
+        var logger = new LoggerFake(console);
+        var generator = new LogicBlocksGenerator(logger, allowOverwrite: true);
 
         // Act
         generator.Execute(

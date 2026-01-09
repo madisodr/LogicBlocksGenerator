@@ -1,21 +1,17 @@
 namespace LogicBlocksGenerator;
 
-using System;
+using CliFx.Infrastructure;
 
 public sealed class ConsoleLogger : ILogger
 {
-    public void Info(string message)
+    private readonly IConsole _console;
+
+    public ConsoleLogger(IConsole console)
     {
-        Console.WriteLine($"[INFO] {message}");
+        _console = console;
     }
 
-    public void Warning(string message)
-    {
-        Console.WriteLine($"[WARN] {message}");
-    }
-
-    public void Error(string message)
-    {
-        Console.Error.WriteLine($"[ERROR] {message}");
-    }
+    public void Info(string message) => _console.Output.WriteLine($"[INFO] {message}");
+    public void Warning(string message) => _console.Output.WriteLine($"[WARN] {message}");
+    public void Error(string message) => _console.Error.WriteLine($"[ERROR] {message}");
 }
