@@ -23,7 +23,7 @@ public sealed class GenerateCommand : ICommand
 
     [CommandOption(
         "template",
-        Description = "Directory containing *.cs.tpl templates.",
+        Description = "Custom directory containing *.cs.tpl templates. Defaults to packaged template files.",
         IsRequired = false
     )]
     public string TemplateDir { get; init; } = "./templates";
