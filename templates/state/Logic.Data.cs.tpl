@@ -2,8 +2,6 @@ namespace ${NAMESPACE};
 
 using Chickensoft.Introspection;
 
-using Godot;
-
 public partial class ${NAME}Logic
 {
     [Meta, Id("${NAME_LOWER}_logic_data")]

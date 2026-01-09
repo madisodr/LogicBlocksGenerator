@@ -5,7 +5,7 @@ While [Chickensoft's LogicBlocks](https://github.com/chickensoft-games/LogicBloc
 
 Tested on
 - [x] Windows 11
-- [ ] MacOS
+- [x] MacOS
 - [ ] *Nix
 
 ## build

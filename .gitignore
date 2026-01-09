@@ -1,5 +1,7 @@
-bin/
-obj/
-
 LogicBlocksGenerator.Tests/bin/
 LogicBlocksGenerator.Tests/obj/
+
+bin/
+obj/
+nupkgs/
+
