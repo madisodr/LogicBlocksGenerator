@@ -11,7 +11,7 @@ Tested on
 ## Installation and Usage
 ### Install From NuGet
 ```bash
-dotnet tool install --global LogicBlocksGenerator --version 0.1.2
+dotnet tool install --global LogicBlocksGenerator
 ```
 
 ### Run
