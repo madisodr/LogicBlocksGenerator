@@ -3,8 +3,6 @@ namespace ${NAMESPACE};
 using Chickensoft.Introspection;
 using Chickensoft.LogicBlocks;
 
-using Godot;
-
 public partial class ${NAME}Logic
 {
     public partial record State
