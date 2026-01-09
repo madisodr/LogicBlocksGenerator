@@ -16,28 +16,12 @@ dotnet tool install --global LogicBlocksGenerator
 
 ### Run
 ```bash
-dotnet tool logicblocksgenerator generate  \
+logicblocksgen generate  \
    --namespace MyGame.Application \
    --name TestLogic \
    --output ./TestLogicBlock/ \
 ```
 
-### Usage
-```
-USAGE
-  LogicBlocksGenerator generate --namespace <value> --name <value> --output <value> [options]
-
-DESCRIPTION
-  Generates LogicBlocks files from templates.
-
-OPTIONS
-* --namespace       Target C# namespace to inject.
-* --name            Root name used for template substitution.
-* --output          Output directory for generated files.
-  --template        Custom directory containing *.cs.tpl templates. Defaults to packaged template files.
-  --overwrite       Allow overwriting existing files. Default: "False".
-  -h|--help         Shows help text.
-```
 
 ## Build & Run From Source
 ### Build
